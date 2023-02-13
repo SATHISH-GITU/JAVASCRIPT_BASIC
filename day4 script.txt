@@ -1,0 +1,101 @@
+function reverse(str, start, end)
+{
+
+    let temp;       
+         
+    while (start <= end)
+    {
+        temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+        start++;
+        end--;
+    }
+}
+     
+
+function reverseWords(s)
+{
+
+    s = s.split("");
+    let start = 0;
+    for (let end = 0;
+             end < s.length; end++)
+    {
+        
+        if (s[end] == ' ')
+        {
+            reverse(s, start, end);
+            start = end + 1;
+        }
+    }
+    reverse(s, start, s.length - 1);
+         
+    reverse(s, 0, s.length - 1);
+    return s.join("");
+}
+     
+var sat =
+"Welcome to this Javascript Guide! ";
+     
+document.write(reverseWords(sat));
+
+
+
+
+
+
+
+
+
+
+ let stack1 = [];
+ let stack2 = [];
+
+
+ function enqueue(element) {
+     stack1.push(element);
+     console.log("Stack-1 elements are enqueue: ", stack1);
+ }
+
+
+ function dequeue() {
+     if (stack2.length === 0) {
+         if (stack1.length === 0) {
+             console.log(
+         "Dequeue not possible because queue is empty..");
+         }
+         while (stack1.length > 0) {
+             let x = stack1.pop();
+             stack2.push(x);
+         }
+     }
+     console.log("Element after Dequeue: " + stack2.pop());
+ }
+
+ enqueue("a");
+ enqueue("b");
+ enqueue("c");
+ dequeue();
+ dequeue();
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+        <body>
+        <script>
+           var array1 = [1,2,3,4,5,6,7];  // Created array
+           var anotherArray = array1;     // Referenced array1 by another variable
+           array1 = [];                   // Empty the array
+           document.write(array1);  // Output [1,2,3,4,5,6,7]
+        </script>
+        </body>
+    </head>
